@@ -152,7 +152,7 @@ PlanoDeEntrega.datafinal.requires = IS_DATE(format=T('%d-%m-%Y'), error_message=
 Entrega = db.define_table('entrega',
                 Field('ra', 'text', label = 'RA'),
                 Field('nome', 'string', label = 'Nome Completo'),
-                Field('email', 'string', label 'e-mail'),
+                Field('email', 'string', label = 'e-mail'),
                 Field('arquivo', 'upload'),
                 Field('planodeentrega', PlanoDeEntrega))
 Entrega.ra.requires = IS_NOT_EMPTY()
