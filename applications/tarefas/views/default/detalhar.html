@@ -1,0 +1,29 @@
+{{extend 'layout.html'}}
+{{for i in tarefa:}}
+<h1>Tarefa</h1>
+<p>
+    <a href="{{=URL('tarefas')}}" class="btn btn-default">Voltar</a>
+    <a href="{{=URL('editar', args=i.id)}}" class="btn btn-default">Editar Tarefa</a>
+</p>
+<h2>
+    Nome: {{=i.nome}}
+</h2>
+<img class ="img-responsive img-rounded" style="max-width:150px; max-height:150px" src="{{=URL('download',args=i.imagem)}}">
+    <h4>
+        Descrição:
+    </h4>
+    <p>{{=i.descricao}}</p>
+    <p>
+        {{if i.concluida:}}
+            <span class="label label-success">Tarefa concluída</span>
+        {{else:}}
+            <spanclass ="label label-danger">Tarefa pendende</span>
+        {{pass}}
+    </p>
+    <p>Prazo Final: <strong>{{=i.prazo.strftime("%d/%m/%Y")}}</strong></p>
+    <p>
+        {{for y in db(db.auth_user.id==i.created_by).select():}}
+        Autor: {{=y.first_name}}{{=y.last_name}}
+        {{pass}}
+    </p>
+    {{pass}}

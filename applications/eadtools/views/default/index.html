@@ -1,0 +1,35 @@
+{{left_sidebar_enabled=True,right_sidebar_enabled=True,('message' in globals())}}
+{{extend 'layout.html'}}
+{{block header}}
+<header class="container-fluid background">
+    <div class="jumbotron text-center">
+        <h1>eadTools</h1>
+    </div>
+</header>
+{{end}}
+{{block left_sidebar}}
+    <h1>Entrega de Atividades</h1>
+    <div class="row text-center">
+        <div class="img-thumbnail" 
+            style="max-width:150px; margin:10px; border:1px solid #939393">
+            <h4>Aluno: entregue projetos, trabalhos e tarefas!</h4>
+            <a href="disciplinas">
+            <img class="img-responsive img-thumbnail" src="{{=URL('static', 'images/cal.jpg')}}">
+            </a>
+        </div>
+    </div>
+{{end}}
+{{=LOAD('comments','post.load',ajax=True)}}
+{{block right_sidebar}}
+    <h1>Controle de Atividades</h1>
+    <div class="row text-center">
+        <div class="img-thumbnail"
+            style="max-width:150px; margin:10px; border:1px solid #939393">
+            <h4>Professor: crie as entregas de suas disciplinas!</h4>
+            <a href="nova_disciplina">
+            <img class="img-responsive img-thumbnail" src="{{=URL('static', 'images/clock.jpg')}}">
+            </a>
+        </div>
+    </div>
+{{end}}
+

@@ -1,0 +1,26 @@
+[2016-11-29 16:17:07] START
+[2016-11-29 16:17:24] EDIT tarefas/models/db.py: 6
+[2016-11-29 16:17:56] EDIT tarefas/models/db.py: 0
+[2016-11-29 16:18:27] EDIT tarefas/models/db.py: 0
+[2016-11-29 16:18:45] EDIT tarefas/models/db.py: 0
+[2016-11-29 16:18:58] EDIT tarefas/models/db.py: 1
+[2016-11-29 16:19:02] EDIT tarefas/models/db.py: 0
+[2016-11-29 16:19:07] EDIT tarefas/models/db.py: 0
+[2016-11-29 16:19:52] EDIT tarefas/models/db.py: 0
+[2016-11-29 16:20:27] EDIT tarefas/models/db.py: 0
+[2016-11-29 16:20:33] EDIT tarefas/models/db.py: -1
+[2016-11-29 17:00:27] EDIT tarefas/models/db.py: 1
+[2016-11-29 17:01:45] EDIT tarefas/models/db.py: 0
+[2016-11-29 17:02:44] EDIT tarefas/models/db.py: 0
+[2016-11-29 17:13:52] EDIT tarefas/models/db.py: 2
+[2016-12-03 11:57:03] EDIT tarefas/models/db.py: 1
+[2016-12-04 23:43:45] CREATE default/contato.html: 0
+[2016-12-05 00:19:22] EDIT tarefas/views/default/contato.html: 0
+[2016-12-05 00:26:58] EDIT tarefas/views/default/contato.html: 0
+[2016-12-05 01:11:25] CREATE default/detalhar.html: 0
+[2016-12-05 01:35:07] EDIT tarefas/views/default/detalhar.html: 0
+[2016-12-05 01:39:19] EDIT tarefas/views/default/detalhar.html: 0
+[2016-12-05 01:41:19] EDIT tarefas/views/default/detalhar.html: 0
+[2016-12-05 02:03:07] CREATE default/editar.html: 0
+[2016-12-05 02:10:22] CREATE default/nova.html: 0
+[2016-12-05 02:13:48] CREATE default/tarefas.html: 0

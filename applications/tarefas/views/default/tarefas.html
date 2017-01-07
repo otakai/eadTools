@@ -1,0 +1,41 @@
+{{extend 'layout.html'}}
+<h1>Lista das tarefas</h1>
+<a href="{{=URL('nova')}}" class="btn btn-default">Nova Tarefa</a>
+<div class="row">
+    {{for i in tar:}}
+    <div class="col-sm-2">
+        <a href="{{=URL('detalhar', args=i.id)}}">
+            <h4>
+                {{=i.nome}}
+            </h4>
+            <div style="width:150px;height:150px;">
+                <img class="img-responsive img-rounded" style="max-width:145px; max-height:145px" src="{{=URL('download',args =i.imagem)}}">
+            </div>
+        </a>
+        <p>
+            <strong>
+                Prioridade:</strong>
+                {{if i.prioridade == 'Baixa':}}
+                    <span class="label label-success">Baixa</span>
+                {{elif i.prioridade == 'Média':}}
+                    <span class="label label-info">Média</span>
+                {{else:}}
+                    <span class="label label-danger">Alta</span>
+                {{pass}}
+        </p>
+        <p>
+            {{if i.prazo != None:}}
+                Prazo Final <strong>
+                {{=i.prazo.strftime("%d/%m/%Y")}}</strong>
+            {{else:}}
+        <p>
+            &nbsp;
+        </p>
+        {{pass}}
+        </p>
+        <p>
+            <a href="{{=URL('detalhar', args=i.id)}}">Ver mais</a>
+        </p>
+    </div>
+    {{pass}}
+</div>

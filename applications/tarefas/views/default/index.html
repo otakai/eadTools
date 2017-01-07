@@ -1,0 +1,44 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+{{block header}}
+<header class="container-fluid background">
+    <div class="jumbotron text-center">
+        <h1>Gerenciador de Tarefas</h1>
+    </div>
+</header>
+{{end}}
+<h1>
+    O Melhor Gerenciador de Tarefas do Mundo
+</h1>
+<div class="row text-center">
+    <div class="img-thumbnail"
+        style="max-width:259px;margin:19px;border:1px solid #939393">
+        <h4>Seja mais organizado</h4>
+        <img class="img-responsive img-thumbnail" src="{{=URL('static', 'images/foca.png')}}">
+    </div>
+    <div class="img-thumbnail" style="max-width:259px; margin:19px; border:1px solid #939393">
+        <h4>Produza mais</h4>
+        <img class="img-responsive img-thumbnail" src="{{=URL('static', 'images/cal.jpeg')}}">
+    </div>
+    <div class="img-thumbnail" style="max-width:259px;margin:19px;border:1px solid #939393">
+        <h4>Controle suas pendencias</h4>
+        <img class="img-responsive img-thumbnail" src="{{=URL('static', 'images/lista.jpg')}}">
+    </div>
+</div>
+{{block right_sidebar}}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <i class="glyphicon glyphicon-ok"></i>
+            {{=T("Menu")}}
+            </a>
+        </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="tarefas">Tarefas</a></li>
+        <li class="list-group-item"><a href="#">Como usar</a></li>
+        <li class="list-group-item"><a href="#">Compartilhe</a></li>
+    </ul>
+</div>
+{{end}}
+

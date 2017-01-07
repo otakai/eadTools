@@ -1,0 +1,37 @@
+{{extend 'layout.html'}}
+<h1>Entre em contato conosco</h1>
+<div class="col-md-6">
+    {{=BEAUTIFY(response._vars.values()[0])}}
+</div>
+<div class="col-md-5">
+    <div class="row">
+        <h4>Av. Rudge, 315</h4>
+        <h4>Bom Retiro, São Paulo - SP, 01133-000</h4>
+        <h4>
+            <span class="glyphicon glyphicon-earphone"></span> (11) 3254-8300
+        </h4>
+    </div>
+    <div class="row" style="padding-top:29px;">
+        <div id="googleMap" style="height:239px;width:100%;"></div>
+            <!-- Adicionando Google Maps com JavaScript -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLrFQNRMeXfD425zDrE7e9tHe3BmijKFQ" type="text/javascript"></script>
+            <script>
+                var myCenter = new google.maps.LatLng(-23.525855, -46.649322);
+                function initialize() {
+                    var mapProp = {
+                        center: myCenter,
+                        zoom: 15,
+                        scrollwheel: true,
+                        draggable: true,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                    var marker = new google.maps.Marker({
+                        position: myCenter,
+                    });
+                    marker.setMap(map);
+                }
+                google.maps.event.addDomListener(window, 'load', initialize);
+            </script>
+        </div>
+</div>

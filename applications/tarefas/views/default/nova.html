@@ -1,0 +1,6 @@
+{{extend 'layout.html'}}
+<h1>Nova tarefa</h1>
+<div class="col-md-6">
+    <a href="{{=URL('tarefas')}}" class="btn btn-default">Voltar</a>
+    {{=BEAUTIFY(response._vars.values()[0])}}
+</div>

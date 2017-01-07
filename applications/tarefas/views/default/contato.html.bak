@@ -1,0 +1,37 @@
+{{extend 'layout.html'}}
+<h1>Entre em contato conosco</h1>
+<div class="col-md-6">
+    {{=BEAUTIFY(response._vars.values()[0])}}
+</div>
+<div class="col-md-5">
+    <div class="row">
+        <h4>Rua da Bolhas Estouradas, 1000</h4>
+        <h4>Porto Alegre, RS.</h4>
+        <h4>
+            <span class="glyphicon glyphicon-earphone"></span> (51) 8866.5544
+        </h4>
+    </div>
+    <div class="row" style="padding-top:29px;">
+        <div id="googleMap" style="height:239px;width:199%;"></div>
+        <!-- Adicionando Google Maps com JavaScript -->
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script>
+            var myCenter = new google.maps.LatLng(-30.0279622, -51.2298482);
+            function initialize() {
+                var mapProp = {
+                    center:myCenter,
+                    zoom:12,
+                    scrollwheelztrue,
+                    draggableztrue,
+                    mapTypeId:google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                var marker = new google.maps.Marker({
+                    position:myCenter,
+                });
+                marker.setMap(map);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </div>
+</div>

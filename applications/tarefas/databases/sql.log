@@ -1,0 +1,80 @@
+timestamp: 2016-11-29T16:17:14.386000
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512)
+);
+success!
+timestamp: 2016-11-29T16:17:14.531000
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-11-29T16:17:14.695000
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2016-11-29T16:17:14.909000
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2016-11-29T16:17:15.679000
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-11-29T16:17:15.848000
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2016-11-29T16:20:27.881000
+CREATE TABLE tarefa(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome CHAR(512),
+    descricao TEXT,
+    prazo DATE,
+    prioridade INTEGER,
+    concluida CHAR(1)
+);
+success!
+success!
+timestamp: 2016-12-03T21:28:33.292000
+ALTER TABLE tarefa ADD modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+timestamp: 2016-12-03T21:28:33.685000
+ALTER TABLE tarefa ADD is_active CHAR(1);
+timestamp: 2016-12-03T21:28:33.907000
+ALTER TABLE tarefa ADD created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+timestamp: 2016-12-03T21:28:34.104000
+ALTER TABLE tarefa ADD created_on TIMESTAMP;
+timestamp: 2016-12-03T21:28:34.301000
+ALTER TABLE tarefa ADD modified_on TIMESTAMP;
+success!
+timestamp: 2016-12-04T22:43:38.370000
+ALTER TABLE tarefa ADD imagem CHAR(512);
+success!
